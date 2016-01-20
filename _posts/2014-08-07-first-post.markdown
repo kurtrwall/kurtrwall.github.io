@@ -1,6 +1,11 @@
 ---
 layout: post
 title:  "Lorem Ipsum"
+description: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Suspendisse at metus augue.
+    In fringilla nibh ac efficitur blandit.
+    Nullam eu pretium mi.
 date:   2014-08-31 14:36:23
 permalink: /first-post.html
 ---

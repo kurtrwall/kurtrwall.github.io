@@ -6,19 +6,18 @@ layout: landing-page
 
 				<header class="special container">
 					<span class="icon fa-bar-chart-o"></span>
-					<h2>As this is my <strong>twentieth</strong> freebie for HTML5 UP
-					<br />
-					I decided to give it a really creative name.</h2>
-					<p>Turns out <strong>Twenty</strong> was the best I could come up with. Anyway, lame name aside,
-					<br />
-					it's minimally designed, fully responsive, built on HTML5/CSS3/<strong>skel</strong>,
-					and, like all my stuff,
-					<br />
-					released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>
+					<h2>
+						Wagtail themed
+					</h2>
+					<p>
+						For now, solutions posted in this blog will be mainly associated <br>
+						with the Django CMS, <a href="http://wagtail.io">Wagtail</a>. Wagtail is a new CMS built <br>
+						as a package to the python web framework <a href="http://djangoproject.com">Django</a>.
+					</p>
 				</header>
 					
 				<!-- One -->
-					<section class="wrapper style2 container special-alt">
+					<!-- <section class="wrapper style2 container special-alt">
 						<div class="row half">
 							<div class="8u">
 							
@@ -46,49 +45,33 @@ layout: landing-page
 							
 							</div>				
 						</div>
-					</section>
+					</section> -->
 					
 				<!-- Two -->
 					<section class="wrapper style1 container special">
 						<div class="row">
-							<div class="4u">
-							
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>This is Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-							
-							</div>
-							<div class="4u">
-							
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>Also Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-							
-							</div>
-							<div class="4u">
-							
-								<section>
-									<span class="icon featured fa-check"></span>
-									<header>
-										<h3>Probably Something</h3>
-									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-								</section>
-							
-							</div>
+							{% for post in site.posts %}
+								<div class="4u">
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>{{ post.title }}</h3>
+										</header>
+										<p>{{ post.description }}</p>
+									</section>
+								</div>
+								{% if forloop.index0 == 2 %}
+									{{ break }}
+								{% endif %}
+							{% endfor %}
 						</div>
+						<ul class="buttons">
+							<li><a href="/blog/" class="button special">View list of posts</a></li>
+						</ul>
 					</section>
 					
 				<!-- Three -->
-					<section class="wrapper style3 container special">
+					<!-- <section class="wrapper style3 container special">
 					
 						<header class="major">
 							<h2>Next look at this <strong>cool stuff</strong></h2>
@@ -149,12 +132,12 @@ layout: landing-page
 							</ul>
 						</footer>
 					
-					</section>
+					</section> -->
 					
 			</article>
 
 		<!-- CTA -->
-			<section id="cta">
+			<!-- <section id="cta">
 			
 				<header>
 					<h2>Ready to do <strong>something</strong>?</h2>
@@ -167,4 +150,4 @@ layout: landing-page
 					</ul>
 				</footer>
 			
-			</section>
+			</section> -->

@@ -1,6 +1,10 @@
 ---
 layout: post
 title:  "Morbi a Semper"
+description: >
+    Morbi a semper justo, non eleifend elit.
+    Sed nulla nulla, porttitor nec volutpat eu, pulvinar vitae augue.
+    Curabitur tempor quis lorem eget vestibulum.
 date:   2014-08-31 14:36:23
 ---
 

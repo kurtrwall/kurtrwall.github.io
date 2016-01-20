@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "Duis in purus"
+description: >
+    Duis in purus sit amet elit ullamcorper venenatis vel a diam.
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
 date:   2014-09-07 14:36:23
 categories: Duis
 ---
