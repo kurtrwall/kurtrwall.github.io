@@ -1,14 +1,10 @@
 ---
-published: true
----
----
 layout: post
-title:  "How Wagtail changes Django"
+title:  "How Wagtail changes Django: Part one"
 description: >
     Django projects using Wagtail are still just Django, but there are a few
     key differences that should be understood when using Wagtail. The is the
     first post of a series.
-date:   2016-10-18
 permalink: /blog/django-wagtail-differences-pt1.html
 ---
 
@@ -16,7 +12,7 @@ permalink: /blog/django-wagtail-differences-pt1.html
 
 The opinions and structure that Wagtail is built with are few but important to understand. In this series, we'll be stepping through some of these and how they make a difference to a Django project.
 
-# Part One: The View
+# Part one: The View
 
 Let's first follow how a request normally flows once it hits the Django application at a high level:
 
