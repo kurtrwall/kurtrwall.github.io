@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ---
 layout: post
@@ -99,14 +99,4 @@ That's an important question. This seems like we've added **a lot** of complicat
 
 There are probably many other benefits that I haven't thought of, but these are a few big points.
 
-Thanks for checking this out. If you're looking for more Wagtail articles, I'd recommend [Joss Ingram's blog](https://jossingram.wordpress.com/category/wagtail-2/) where he has loads of great stuff. As for me, my next post will be about creating Wagtail Streamfield blocks that handle forms via unique block identifiers and handlers.
-
-
-
-
-
-
-
-
-
-
+Thanks for checking this out. If you're looking for more Wagtail articles, I'd recommend [Joss Ingram's blog](https://jossingram.wordpress.com/category/wagtail-2/) where he has loads of great stuff. As for me, I'll be continuing this series with data migrations.
