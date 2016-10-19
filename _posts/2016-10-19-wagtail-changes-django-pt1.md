@@ -8,6 +8,7 @@ description: >
 permalink: /blog/wagtail-changes-django-pt1.html
 categories: ['wagtail', 'django', 'python', 'cms']
 author: Kurt Wall
+disqus: True
 ---
 
 [Wagtail is a Django CMS](https://wagtail.io/) that an increasing amount Python web developers are using for their content management needs. Wagtail operates more like a CMS _framework_ instead of a fully featured CMS because it gives you the tools and features one might expect without making many decisions for you about how the content is structured. This provides a delicate balance between opinion and freedom that developers are always searching for.
@@ -88,7 +89,7 @@ for fn in hooks.get_hooks('before_serve_page'):
 		return result
 {% endhighlight %}
 
-Wagtail has a hook system in which a developer may add a function that will be called when loops like this exist in the code. This will call all functions registered with that hook to be called and it returns the result if it's an HttpResponse object.
+Wagtail has a [hook system](http://docs.wagtail.io/en/v1.6.3/reference/hooks.html) in which a developer may add a function that will be called when loops like this exist in the code. This will call all functions registered with that hook and it returns the result if it's an HttpResponse object.
 
 ### Call the `page` object's `serve` method and return the result
 
