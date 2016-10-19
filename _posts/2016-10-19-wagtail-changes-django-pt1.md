@@ -18,7 +18,7 @@ The opinions and structure that Wagtail is built with are few but important to u
 
 Let's first follow how a request normally flows once it hits the Django application at a high level:
 
-1. The WSGIRequest object hits the Django middleware.
+1. The WSGIRequest object hits Django middleware.
 2. The request is used to find the appropriate view function to call (URL resolution).
 3. The view function is called with the request and it returns a response.
 
@@ -77,7 +77,7 @@ path_components = [component for component in path.split('/') if component]
 page, args, kwargs = request.site.root_page.specific.route(request, path_components)
 {% endhighlight %}
 
-After getting a list of the parts to the path, it uses the `site` object's `root_page.specific` ([see here for details on `specific`](http://docs.wagtail.io/en/v1.6.3/reference/pages/model_reference.html#wagtail.wagtailcore.models.Page.specific)) to call the `route` method. The `route` method recursively searches for the requested page and returning a [RouteResult](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/url_routing.py) if it's found and the page is published. [The code for `route` lives here.](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/models.py#L657)
+After getting a list of the parts to the path, it uses the `site` object's `root_page.specific` ([see here for details on `specific`](http://docs.wagtail.io/en/v1.6.3/reference/pages/model_reference.html#wagtail.wagtailcore.models.Page.specific)) to call the `route` method. The `route` method recursively searches for the requested page and returns a [RouteResult](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/url_routing.py) if it's found and the page is published. [The code for `route` lives here.](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/models.py#L657)
 
 ### Call all registered function hooks
 
@@ -101,7 +101,15 @@ This is where Wagtail hands off the request to the Page class to handle the rest
 1. Checks to see if we're previewing the page and sets a context variable if so.
 2. Calls the Page method [`get_template`](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/models.py#L752) to get the appropriate template for rendering.
 3. Calls the Page method [`get_context`](https://github.com/torchbox/wagtail/blob/v1.6.3/wagtail/wagtailcore/models.py#L745) to get the context for the template for rendering.
-4. Returns a [TemplateResponse](https://docs.djangoproject.com/en/1.10/ref/template-response/#templateresponse-objects).
+4. Returns a [TemplateResponse](https://docs.djangoproject.com/en/1.10/ref/template-response/#templateresponse-objects), like so:
+{% highlight python %}
+return TemplateResponse(
+    request,
+    self.get_template(request, *args, **kwargs),
+    self.get_context(request, *args, **kwargs)
+)
+{% endhighlight %}
+
 
 ---
 
